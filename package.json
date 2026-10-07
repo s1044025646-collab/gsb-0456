@@ -1,0 +1,20 @@
+{
+  "name": "fs-dither-backend",
+  "version": "1.0.0",
+  "description": "Floyd–Steinberg 二值化与误差传播核验后端（API + CLI）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/cli/cli.js serve",
+    "serve": "node dist/src/cli/cli.js serve",
+    "demo": "node dist/src/cli/cli.js demo",
+    "test": "tsc -p tsconfig.test.json && node --test \"dist-test/test/**/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0"
+  }
+}
