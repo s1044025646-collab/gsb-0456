@@ -1,0 +1,26 @@
+export class ApiError extends Error {
+  constructor(
+    readonly code: string,
+    message: string,
+    readonly status = 400,
+  ) {
+    super(message);
+    this.name = "ApiError";
+  }
+}
+
+export const ERROR_CODES = {
+  INVALID_JSON: "INVALID_JSON",
+  EMPTY_MATRIX: "EMPTY_MATRIX",
+  EMPTY_ROW: "EMPTY_ROW",
+  RAGGED_MATRIX: "RAGGED_MATRIX",
+  INVALID_PIXEL_TYPE: "INVALID_PIXEL_TYPE",
+  PIXEL_OUT_OF_RANGE: "PIXEL_OUT_OF_RANGE",
+  MATRIX_TOO_LARGE: "MATRIX_TOO_LARGE",
+  INVALID_MODE: "INVALID_MODE",
+  INVALID_BOUNDARY_POLICY: "INVALID_BOUNDARY_POLICY",
+  INVALID_COORDINATE: "INVALID_COORDINATE",
+  INVALID_LIMIT: "INVALID_LIMIT",
+  NOT_FOUND: "NOT_FOUND",
+  IDEMPOTENCY_CONFLICT: "IDEMPOTENCY_CONFLICT",
+} as const;

@@ -1,0 +1,28 @@
+{
+  "name": "floyd-steinberg-backend",
+  "version": "1.0.0",
+  "description": "Windows-local Floyd-Steinberg dithering JSON API and CLI",
+  "main": "dist/server.js",
+  "type": "module",
+  "bin": {
+    "fsdither": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && tsc -p tsconfig.test.json && node --test --experimental-sqlite dist-test/dither.test.js",
+    "start": "npm run build && node --experimental-sqlite dist/server.js",
+    "demo": "npm run build && node --experimental-sqlite dist/cli.js demo"
+  },
+  "keywords": [
+    "floyd-steinberg",
+    "dithering",
+    "sqlite",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.9.0",
+    "typescript": "^5.9.3"
+  }
+}
